@@ -1,16 +1,38 @@
 {% extends 'base.html' %}
-
+(% load crispy_forms_tags %)
 {% block content %}
 <div class="container">
-  <h1>Cardiac Disease Risk Prediction</h1>
+  <h1 class="text-center">Cardiac Disease Risk Prediction</h1>
   <form method="POST">
     {% csrf_token %}
-    {{ form.as_p }}
+    <div class="row">
+      <div class="col">
+        <div class="mb-3 mt-3"><label class="form-label">Age</label> {{form.age}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Cigarettes per day</label> {{form.cigs_per_day}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Sex</label> {{form.sex}} </div>
+        <div class="mb-3 mt-3 form-check">{{form.current_smoker}}<label class="form-check-label">Current Smoker</label>
+        </div>
+        <div class="form-check mb-3 mt-3">{{form.bp_meds}}<label class="form-check-label">On Blood Pressure
+            Medication</label></div>
+        <div class="form-check mb-3 mt-3">{{form.prevalent_stroke}} <label class="form-check-label">History of
+            Stroke</label></div>
+        <div class="form-check mb-3 mt-3">{{form.prevalent_hyp}}<label class="form-label">Hypertension</label> </div>
+        <div class="form-check mb-3 mt-3">{{form.diabetes}}<label class="form-label">Diabetes</label> </div>
+      </div>
+      <div class="col">
+        <div class="mb-3 mt-3"><label class="form-label">Total Cholesterol</label> {{form.tot_chol}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Systolic Blood Pressure</label> {{form.sys_bp}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Diastolic Blood Pressure</label> {{form.dia_bp}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Body Mass Index (BMI)</label> {{form.bmi}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Heart Rate</label> {{form.heart_rate}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Glucose</label> {{form.glucose}} </div>
+      </div>
+    </div>
     <button type="submit" class="btn btn-primary">Predict</button>
   </form>
   {% if prediction %}
-    <h2>Prediction:</h2>
-    <p>The user has a {{ prediction }}% risk of developing cardiac disease in the next 10 years.</p>
+  <h2>Prediction:</h2>
+  <p>The user has a {{ prediction }}% risk of developing cardiac disease in the next 10 years.</p>
   {% endif %}
 </div>
 {% endblock %}

@@ -14,3 +14,6 @@ class PredictionModel(models.Model):
         # Use the model to predict the user's risk of cardiac disease
         prediction = model.predict_proba(user_data)[:, 1]
         return prediction
+
+    def __str__(self):
+        return "PredictionModel"

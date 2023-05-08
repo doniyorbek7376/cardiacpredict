@@ -9,9 +9,9 @@
       <div class="col">
         <div class="mb-3 mt-3"><label class="form-label">Age</label> {{form.age}} </div>
         <div class="mb-3 mt-3"><label class="form-label">Cigarettes per day</label> {{form.cigs_per_day}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Sex</label> {{form.sex}} </div>
-        <div class="mb-3 mt-3 form-check">{{form.current_smoker}}<label class="form-check-label">Current Smoker</label>
-        </div>
+        <div class="mb-3 mt-3"><label class="form-label">Weight (kg)</label> {{form.weight}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Gender</label> {{form.sex}} </div>
+
         <div class="form-check mb-3 mt-3">{{form.bp_meds}}<label class="form-check-label">On Blood Pressure
             Medication</label></div>
         <div class="form-check mb-3 mt-3">{{form.prevalent_stroke}} <label class="form-check-label">History of
@@ -21,10 +21,10 @@
       </div>
       <div class="col">
         <div class="mb-3 mt-3"><label class="form-label">Total Cholesterol</label> {{form.tot_chol}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Heart Rate</label> {{form.heart_rate}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Height (cm)</label> {{form.height}} </div>
         <div class="mb-3 mt-3"><label class="form-label">Systolic Blood Pressure</label> {{form.sys_bp}} </div>
         <div class="mb-3 mt-3"><label class="form-label">Diastolic Blood Pressure</label> {{form.dia_bp}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Body Mass Index (BMI)</label> {{form.bmi}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Heart Rate</label> {{form.heart_rate}} </div>
         <div class="mb-3 mt-3"><label class="form-label">Glucose</label> {{form.glucose}} </div>
       </div>
     </div>
@@ -32,7 +32,7 @@
   </form>
   {% if prediction %}
   <h2>Prediction:</h2>
-  <p>The user has a {{ prediction }}% risk of developing cardiac disease in the next 10 years.</p>
+  <p>The user has a {{ prediction }}% risk of developing conorary heart disease in the next 10 years.</p>
   {% endif %}
 </div>
 {% endblock %}

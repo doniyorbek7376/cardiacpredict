@@ -8,9 +8,6 @@ class UserInputForm(forms.Form):
     sex = forms.ChoiceField(label='Sex', choices=[('0', 'Female'), ('1', 'Male')], widget=forms.RadioSelect(attrs={
         'class': 'radio-inline',
     }))
-    current_smoker = forms.BooleanField(label='Current Smoker', required=False, widget=forms.CheckboxInput(attrs={
-        'class': 'form-check-input'
-    }))
     cigs_per_day = forms.IntegerField(label='Cigarettes per day', min_value=0, max_value=50, widget=forms.NumberInput(attrs={
         'class': 'form-control'
     }))
@@ -35,7 +32,10 @@ class UserInputForm(forms.Form):
     dia_bp = forms.FloatField(label='Diastolic Blood Pressure', min_value=40, max_value=150, widget=forms.NumberInput(attrs={
         'class': 'form-control'
     }))
-    bmi = forms.FloatField(label='Body Mass Index (BMI)', min_value=15, max_value=60, widget=forms.NumberInput(attrs={
+    weight = forms.FloatField(label='Weight (kg)', min_value=0, max_value=200, widget=forms.NumberInput(attrs={
+        'class': 'form-control'
+    }))
+    height = forms.IntegerField(label='Height (cm)', min_value=0, max_value=300, widget=forms.NumberInput(attrs={
         'class': 'form-control'
     }))
     heart_rate = forms.IntegerField(label='Heart Rate', min_value=40, max_value=150, widget=forms.NumberInput(attrs={

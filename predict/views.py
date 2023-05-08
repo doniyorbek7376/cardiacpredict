@@ -11,7 +11,7 @@ def home(request):
             user_data = [
                 1 if form.cleaned_data['sex'] == 'Male' else 0,
                 form.cleaned_data['age'],
-                form.cleaned_data['current_smoker'],
+                form.cleaned_data['cigs_per_day'] > 0,
                 form.cleaned_data['cigs_per_day'],
                 form.cleaned_data['bp_meds'],
                 form.cleaned_data['prevalent_stroke'],
@@ -20,7 +20,7 @@ def home(request):
                 form.cleaned_data['tot_chol'],
                 form.cleaned_data['sys_bp'],
                 form.cleaned_data['dia_bp'],
-                form.cleaned_data['bmi'],
+                form.cleaned_data['weight'] / (form.cleaned_data['height']/100)**2,
                 form.cleaned_data['heart_rate'],
                 form.cleaned_data['glucose']
             ]

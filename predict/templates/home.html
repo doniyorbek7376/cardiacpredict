@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-(% load crispy_forms_tags %)
 {% block content %}
 <div class="container">
   <h1 class="text-center">Cardiac Disease Risk Prediction</h1>
+  Welcome {{user.username}}. 
+  <a href="/logout">Logout</a>
   <form method="POST">
     {% csrf_token %}
     <div class="row">
@@ -20,12 +21,12 @@
         <div class="form-check mb-3 mt-3">{{form.diabetes}}<label class="form-label">Diabetes</label> </div>
       </div>
       <div class="col">
-        <div class="mb-3 mt-3"><label class="form-label">Total Cholesterol</label> {{form.tot_chol}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Heart Rate</label> {{form.heart_rate}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Total Cholesterol (mg/dL)</label> {{form.tot_chol}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Heart Rate (BPM)</label> {{form.heart_rate}} </div>
         <div class="mb-3 mt-3"><label class="form-label">Height (cm)</label> {{form.height}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Systolic Blood Pressure</label> {{form.sys_bp}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Diastolic Blood Pressure</label> {{form.dia_bp}} </div>
-        <div class="mb-3 mt-3"><label class="form-label">Glucose</label> {{form.glucose}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Systolic Blood Pressure (mmHg)</label> {{form.sys_bp}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Diastolic Blood Pressure (mmHg)</label> {{form.dia_bp}} </div>
+        <div class="mb-3 mt-3"><label class="form-label">Glucose (mg/dL)</label> {{form.glucose}} </div>
       </div>
     </div>
     <button type="submit" class="btn btn-primary">Predict</button>
@@ -34,5 +35,7 @@
   <h2>Prediction:</h2>
   <p>The user has a {{ prediction }}% risk of developing conorary heart disease in the next 10 years.</p>
   {% endif %}
+
+
 </div>
 {% endblock %}

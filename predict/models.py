@@ -23,7 +23,7 @@ class PredictionModel(models.Model):
 
 class PredictionRequest(models.Model):
     age = models.IntegerField()
-    sex = models.BooleanField()
+    sex = models.CharField(max_length=10)
     cigs_per_day = models.IntegerField()
     bp_meds = models.BooleanField()
     prevalent_stroke = models.BooleanField()

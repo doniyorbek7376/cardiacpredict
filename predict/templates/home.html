@@ -2,8 +2,6 @@
 {% block content %}
 <div class="container">
   <h1 class="text-center">Cardiac Disease Risk Prediction</h1>
-  Welcome {{user.username}}. 
-  <a href="/logout">Logout</a>
   <form method="POST">
     {% csrf_token %}
     <div class="row">
@@ -36,6 +34,31 @@
   <p>The user has a {{ prediction }}% risk of developing conorary heart disease in the next 10 years.</p>
   {% endif %}
 
+  {% if history %}
+  <h2 class="mt-5"> Risk assessment history</h2>
+  <table class="table table-hover mt-2 w-50">
+    <thead>
+      <tr>
+        <th>Time</th>
+        <th>Risk of Coronary Heart Disease in the next 10 years</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>John</td>
+        <td>Doe</td>
+      </tr>
+      <tr>
+        <td>Mary</td>
+        <td>Moe</td>
+      </tr>
+      <tr>
+        <td>July</td>
+        <td>Dooley</td>
+      </tr>
+    </tbody>
+  </table>
+  {% endif %}
 
 </div>
 {% endblock %}

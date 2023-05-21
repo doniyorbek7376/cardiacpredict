@@ -4,6 +4,7 @@ header {
     color: white;
     padding: 10px;
     text-align: center;
+    position: relative;
 }
 
 /* Styles for the main content */
@@ -26,4 +27,22 @@ footer {
 /* Styles for the error messages */
 .error-message {
     color: red;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+a {
+    color: white;
+}
+
+.img-pos {
+    position: absolute;
+    top: 22px;
+    right: 2rem;
+}
+a:hover {
+    color: white;
 }

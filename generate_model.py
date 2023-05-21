@@ -33,5 +33,3 @@ print("Accuracy:", accuracy)
 # Save the trained model to a file
 with open('rf_model.pkl', 'wb') as f:
     pickle.dump(rf, f)
-
-

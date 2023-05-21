@@ -5,8 +5,5 @@ from .models import PredictionModel
 class PredictionModelAdmin(admin.ModelAdmin):
     model = PredictionModel
 
-    def has_add_permission(self, request, obj=None) -> bool:
-        return False
-
 
 admin.site.register(PredictionModel, PredictionModelAdmin)
